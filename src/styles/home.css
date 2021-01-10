@@ -6,6 +6,11 @@
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    background-color: #FDEC86;
+}
+
+.body__color {
+    background-color: #BABABA;
 }
 
 .login__message {

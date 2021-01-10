@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import '../src/styles/App.css';
 import {selectSignedIn} from './app/features/userSlice'; 
 import {useSelector} from 'react-redux'; 
