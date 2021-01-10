@@ -1,11 +1,16 @@
 .home__page {
     display: flex;
+    height: 100%;
     align-items: center;
+    margin: 0 auto;
     justify-content: center;
     width: 50%;
-    margin: 0 auto;
     text-align: center;
     background-color: #FDEC86;
+}
+
+.body__color {
+    background-color: gainsboro;
 }
 
 .login__message {
@@ -18,14 +23,9 @@
     margin: 0;
 }
 
-.login__message>h2 {
-    font-size: 150px;
-    margin: 0;
-}
-
 .login__message>h1 {
-    font-size: 100px;
-    width: 80%;
+    font-size: 50px;
+    width: 70%;
     line-height: 1em;
     margin: 10px auto;
     margin-top: 0;
@@ -44,8 +44,8 @@
 }
 
 .login__button {
-    width: 300px;
-    margin: 15px auto 0px auto;
+    width: 200px;
+    margin: 15px auto 250px auto;
     padding: 15px 0;
     border: none;
     background: rgb(17, 17, 17);

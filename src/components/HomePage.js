@@ -19,51 +19,55 @@ const HomePage = () => {
 
 
     return (
-        <div className="home__page">
-            <div className="container">
-                <div className="row">
-                    <div className="body__color">
-                        <div className="" style={{ display: isSignedIn ? "none" : "" }}>
-                            {!isSignedIn ? (
-                                <>
-                                    <div className="paper">
-                                        <h2><span>🗞️</span></h2>
+        <div className="body__color">
+            <div className="home__page">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-12 col-sm-12 col-md-12">
+                            <div className="">
+                                {!isSignedIn ? (
 
-                                    </div>
-                                    <h1>Today's News All in one place!</h1>
-                                    <p>
-                                        We Provide high quality online resources for reading blogs.
-                                        Just sign up and start reading!
+                                    <div className="login__message ">
+                                        <div className="paper">
+                                            <h2><span>🗞️</span></h2>
+                                        </div>
+                                        <h1>The News! </h1>
+                                        <h1 className="">All in one place</h1>
+                                        <p>
+                                            We Provide high quality online resources for reading the news.
+                                            Just login with google and start reading! No signup necessary!
                                      </p>
 
-                                    <GoogleLogin
-                                        clientId={clientId}
-                                        render={(renderProps) => (
-                                            <button
-                                                onClick={renderProps.onClick}
-                                                disabled={renderProps.disabled}
-                                                className="login__button">
-                                                Login With Google
-                                            </button>
-                                        )}
-                                        onSuccess={login}
-                                        onFailure={login}
-                                        isSignedIn={true}
-                                        cookiePolicy={"single_host_origin"}
+                                        <GoogleLogin
+                                            clientId={clientId}
+                                            render={(renderProps) => (
+                                                <button
+                                                    onClick={renderProps.onClick}
+                                                    disabled={renderProps.disabled}
+                                                    className="login__button">
+                                                    Login With Google
+                                                </button>
+                                            )}
+                                            onSuccess={login}
+                                            onFailure={login}
+                                            isSignedIn={true}
+                                            cookiePolicy={"single_host_origin"}
 
-                                    />
+                                        />
 
 
-                                </>
-                            ) : (
-                                    ""
-                                )}
+
+                                    </div>
+                                ) : (
+                                        ""
+                                    )}
+                            </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
+
 
     );
 };
