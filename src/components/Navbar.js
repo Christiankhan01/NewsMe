@@ -14,6 +14,7 @@ const Navbar = () => {
     const dispatch = useDispatch();
 
     const logout = (response) => {
+        dispatch(setSignedIn(false)); 
         dispatch(setUserData(null));
     }
 
@@ -23,7 +24,7 @@ const Navbar = () => {
     }
     return (
         <div className="navbar">
-            <div className="navbar__header">Blogify 📝</div>
+            <div className="navbar__header">Blogify 📰</div>
             {isSignedIn && (
                 <div className="blog__search">
                     <input

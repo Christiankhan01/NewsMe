@@ -3,11 +3,11 @@ import GoogleLogin from 'react-google-login';
 import {useDispatch, useSelector} from 'react-redux'; 
 import {selectSignedIn, setSignedIn, setUserData} from '../app/features/userSlice'; 
 
-import '../styles/home.css'; 
+import '../styles/Home.css'; 
 
-const clientId = process.env.REACT_APP_BLOG_KEY;
 
 const HomePage = () => {
+    const clientId = process.env.REACT_APP_BLOG_KEY;
     const dispatchEvent = useDispatch(); 
     const login = (response) => {
         console.log(response);
@@ -22,7 +22,7 @@ const HomePage = () => {
             <div className="home__page" style={{ display: isSignedIn ? "none" : "" }}>
                 {!isSignedIn ? (
                     <div className="login__message">
-                        <h2><span>📖</span></h2>
+                        <h2><span>🗞️</span></h2>
                         <h1>A Reader's favorite place!</h1>
                         <p>
                             We Provide high quality online resources for reading blogs.
