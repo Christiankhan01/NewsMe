@@ -19,38 +19,52 @@ const HomePage = () => {
 
 
     return (
-        <div className="body__color">
-            <div className="home__page" style={{ display: isSignedIn ? "none" : "" }}>
-                {!isSignedIn ? (
-                    <div className="login__message">
-                        <h2><span>🗞️</span></h2>
-                        <h1>Today's News All in one place!</h1>
-                        <p>
-                            We Provide high quality online resources for reading blogs.
-                            Just sign up and start reading!
-                    </p>
-                        <GoogleLogin
-                            clientId={clientId}
-                            render={(renderProps) => (
-                                <button
-                                    onClick={renderProps.onClick}
-                                    disabled={renderProps.disabled}
-                                    className="login__button">
-                                    Login With Google
-                                </button>
-                            )}
-                            onSuccess={login}
-                            onFailure={login}
-                            isSignedIn={true}
-                            cookiePolicy={"single_host_origin"}
+        <div className="home__page">
+            <div className="container">
+                <div className="row">
+                    <div className="body__color">
+                        <div className="" style={{ display: isSignedIn ? "none" : "" }}>
+                            {!isSignedIn ? (
+                                <>
+                                    <div className="paper">
+                                        <h2><span>🗞️</span></h2>
 
-                        />
+                                    </div>
+                                    <h1>Today's News All in one place!</h1>
+                                    <p>
+                                        We Provide high quality online resources for reading blogs.
+                                        Just sign up and start reading!
+                                     </p>
+
+                                    <GoogleLogin
+                                        clientId={clientId}
+                                        render={(renderProps) => (
+                                            <button
+                                                onClick={renderProps.onClick}
+                                                disabled={renderProps.disabled}
+                                                className="login__button">
+                                                Login With Google
+                                            </button>
+                                        )}
+                                        onSuccess={login}
+                                        onFailure={login}
+                                        isSignedIn={true}
+                                        cookiePolicy={"single_host_origin"}
+
+                                    />
+
+
+                                </>
+                            ) : (
+                                    ""
+                                )}
+                        </div>
+
                     </div>
-                ) : (
-                        ""
-                    )}
+                </div>
             </div>
-        </div> 
+        </div>
+
     );
 };
 

@@ -1,5 +1,4 @@
 .home__page {
-    height: 87vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,13 +8,14 @@
     background-color: #FDEC86;
 }
 
-.body__color {
-    background-color: #BABABA;
-}
-
 .login__message {
     display: flex;
     flex-direction: column;
+}
+
+.paper {
+    font-size: 150px;
+    margin: 0;
 }
 
 .login__message>h2 {

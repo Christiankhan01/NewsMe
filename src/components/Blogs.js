@@ -9,7 +9,7 @@ const Blogs = () => {
     const searchInput = useSelector(selectUserInput);
     const dispatch = useDispatch();
     const [blogs, setBlogs] = useState();
-    
+
     useEffect(() => {
         const gnewsKey = process.env.REACT_APP_GNEWS_KEY;
         const blog_url = `https://gnews.io/api/v4/search?q=${searchInput}&token=${gnewsKey}`;
@@ -27,28 +27,30 @@ const Blogs = () => {
 
     const [loading, setLoading] = useState(true);
     return (
-        <div className="blog__page body__color">
-            <h1 className="blog__page__header">Blogs</h1>
-            {loading ? <h1 className="loading">Loading...</h1> : ""}
-            <div className="blogs">
-                {blogs?.articles?.map(blog => (
-                    <a className="blog" target="_blank" rel="noreferrer" href={blog.url}>
-                        <img src={blog.image} alt="newsImg" />
-                        <div>
-                            <h3 className="sourceName">
-                                <span>{blog.source.name}</span>
-                                <p>{blog.publishedAt}</p>
-                            </h3>
-                            <h1>{blog.title}</h1>
-                            <p>{blog.description}</p>
-                        </div>
-                    </a>
-                ))}
-                {blogs?.totalArticles === 0 && (
-                    <h1 className="no__blogs">
-                        No news available for you search term.
-                    </h1>
-                )}
+        <div className="col">
+            <div className="blog__page body__color">
+                <h1 className="blog__page__header">Blogs</h1>
+                {loading ? <h1 className="loading">Loading...</h1> : ""}
+                <div className="blogs">
+                    {blogs?.articles?.map(blog => (
+                        <a className="blog" target="_blank" rel="noreferrer" href={blog.url}>
+                            <img src={blog.image} alt="newsImg" />
+                            <div>
+                                <h3 className="sourceName">
+                                    <span>{blog.source.name}</span>
+                                    <p>{blog.publishedAt}</p>
+                                </h3>
+                                <h1>{blog.title}</h1>
+                                <p>{blog.description}</p>
+                            </div>
+                        </a>
+                    ))}
+                    {blogs?.totalArticles === 0 && (
+                        <h1 className="no__blogs">
+                            No news available for you search term.
+                        </h1>
+                    )}
+                </div>
             </div>
 
         </div>
