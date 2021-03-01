@@ -3,7 +3,7 @@
     justify-content: space-between;
     height: 13vh;
     align-items: center;
-    padding: 0px 80px;
+    padding: 10px 10px;
     background: white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     background: #1b1b1d;
@@ -27,13 +27,14 @@
 
 .signedIn {
     font-size: 15px;
-    padding-left: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
     cursor: pointer;
 }
 
 .logout__button {
-    margin-left: 20px;
-    padding: 12px 25px;
+    margin-left: -10px;
+    padding: 10px 10px;
     border-radius: 50px;
     border: none;
     background: rgb(39, 39, 39);
@@ -50,38 +51,37 @@
 
 .blog__search {
     flex: 1;
-    width: 100%;
+    width: 90%;
     display: flex;
-    padding: 10px 0px;
-    margin: 0px 70px;
-    justify-content: space-between;
+    padding: -10px 0px;
+    margin: 0px 5px;
     background: rgb(39, 39, 39);
     border-radius: 5px;
 }
 
 .search {
-    width: 80%;
-    padding: 5px 30px;
+    width: 100%;
+    padding: 5px 10px;
     padding-left: 30px;
+    margin-left: 10px;
     background: none;
     font-family: "Inter";
-    border: none;
     outline: none;
     font-size: 15px;
     color: white;
 }
 
 .submit {
-    width: 18%;
+    width: 20%;
     font-family: "Inter";
     background: none;
     color: white;
     font-size: 14px;
-    border: none;
+    border-color: cornflowerblue;
     cursor: pointer;
-    margin-right: 10px;
-    padding: 12px 0px;
-    border-radius: 5px;
+    margin-left: 10px;
+    padding: 6px 20px;
+    border-radius: none;
     transition: 0.1s ease-in-out;
     background: rgb(31, 31, 31);
     outline: none;

@@ -31,10 +31,11 @@ const HomePage = () => {
                                         <div className="paper">
                                             <h2><span>🗞️</span></h2>
                                         </div>
-                                        <h1>The News! </h1>
-                                        <h1 className="">All in one place</h1>
-                                        <p>
-                                            We Provide high quality online resources for reading the news.
+                                        <h1>Top 10  </h1>
+                                        <h1 className="">News Articles</h1>
+                                        <p className="p__home">
+                                            An online resource for reading the news.
+                                            <br/>
                                             Just login with google and start reading! No signup necessary!
                                      </p>
 

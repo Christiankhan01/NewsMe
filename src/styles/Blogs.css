@@ -1,15 +1,6 @@
-.blog__page {
-    padding: 30px 170px;
-}
-
-.blog__page__header {
-    letter-spacing: -1px;
-    font-size: 35px;
-}
-
 .blogs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 50px;
     padding: 40px 0;
 }

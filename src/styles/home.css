@@ -4,7 +4,7 @@
     align-items: center;
     margin: 0 auto;
     justify-content: center;
-    width: 50%;
+    width: 60%;
     text-align: center;
     background-color: #FDEC86;
 }
@@ -19,8 +19,13 @@
 }
 
 .paper {
-    font-size: 150px;
+    font-size: 100px;
     margin: 0;
+}
+
+.p__home {
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .login__message>h1 {

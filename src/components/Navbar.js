@@ -6,7 +6,7 @@ import { selectUserData, selectSignedIn, setInput, setSignedIn, setUserData } fr
 import '../styles/Navbar.css';
 
 
-const Navbar = () => {
+const Navbar1 = () => {
     const [inputValue, setInputValue] = useState("tech");
     const clientId = process.env.REACT_APP_BLOG_KEY;
     const userData = useSelector(selectUserData);
@@ -18,49 +18,62 @@ const Navbar = () => {
         dispatch(setUserData(null));
     }
 
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            dispatch(setInput(inputValue));
+        }
+    };
+
     const handleClick = (e) => {
         e.preventDefault();
         dispatch(setInput(inputValue));
     }
     return (
-        <div className="row">
-            <div className="col-12 col-sm-12 col-md-12">
-                <div className="navbar">
-                    <div className="navbar__header">Blogify 📰</div>
-                    {isSignedIn && (
-                        <div className="blog__search">
-                            <input
-                                className="search"
-                                placeholder="Search for a blog"
-                                value={inputValue}
-                                onChange={(e) => setInputValue(e.target.value)}
-                            />
-                            <button className="submit" onClick={handleClick}>Search</button></div>
-                    )}
 
-                    {isSignedIn ? (<div className="navbar__user__data">
-                        <Avatar className="user" src={userData?.imageUrl} alt={userData?.name} />
-                        <h1 className="signedIn">{userData?.givenName}</h1>
-                        <GoogleLogout
-                            clientId={clientId}
-                            render={(renderProps) => (
-                                <button
-                                    onClick={renderProps.onClick}
-                                    disabled={renderProps.disabled}
-                                    className="logout__button">
-                                    Logout 👋
-                                </button>
-                            )}
-                            onLogoutSuccess={logout}
-                        />
-                    </div>
-                    ) : (
-                            <h1 className="notSignedIn">User Not Available</h1>
-                        )}
+        <div className="navbar">
+            <h1 className="navbar__header">NewsMe 📰</h1>
+            {isSignedIn && (
+                <div className="blog__search">
+                    <input
+                        type="text"
+                        className="search"
+                        placeholder="Search for a blog"
+                        value={ inputValue }
+                        onChange={ (e) => setInputValue(e.target.value) }
+                        onKeyPress={ handleKeyPress }
+                        onFocus = { (e) => setInputValue("")}
+
+                    />
+                    <button className="submit" onClick={ handleClick } >
+                        Go
+                  </button>
                 </div>
+            ) }
+
+            { isSignedIn ? (<div className="navbar__user__data">
+                <Avatar className="user" src={ userData?.imageUrl } alt={ userData?.name } />
+                <h1 className="signedIn">{ userData?.givenName }</h1>
+                <GoogleLogout
+                    clientId={ clientId }
+                    render={ (renderProps) => (
+                        <button
+                            onClick={ renderProps.onClick }
+                            disabled={ renderProps.disabled }
+                            className="logout__button">
+                            Logout 👋
+                        </button>
+                    ) }
+                    onLogoutSuccess={ logout }
+                />
             </div>
+            ) : (
+                    <h1 className="notSignedIn">User Not Available</h1>
+                ) }
         </div>
     );
 };
 
-export default Navbar
+export default Navbar1;
+
+
