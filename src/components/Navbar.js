@@ -38,7 +38,7 @@ const Navbar1 = () => {
                     <input
                         type="text"
                         className="search"
-                        placeholder="Search for a blog"
+                        placeholder="Enter search here"
                         value={ inputValue }
                         onChange={ (e) => setInputValue(e.target.value) }
                         onKeyPress={ handleKeyPress }
