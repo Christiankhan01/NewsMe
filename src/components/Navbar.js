@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { GoogleLogout } from 'react-google-login';
 import { selectUserData, selectSignedIn, setInput, setSignedIn, setUserData } from '../app/features/userSlice';
-import '../styles/Navbar.css';
+import './styles/Navbar.css';
 
 
 const Navbar1 = () => {

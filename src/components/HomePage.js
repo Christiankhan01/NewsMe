@@ -3,7 +3,7 @@ import GoogleLogin from 'react-google-login';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSignedIn, setSignedIn, setUserData } from '../app/features/userSlice';
 
-import '../styles/Home.css';
+import './styles/Home.css';
 
 
 const HomePage = () => {

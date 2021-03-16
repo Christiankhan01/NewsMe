@@ -1,4 +1,4 @@
-import '../src/styles/App.css';
+import './components/styles/App.css';
 import {selectSignedIn} from './app/features/userSlice'; 
 import {useSelector} from 'react-redux'; 
 import Blogs from './components/Blogs';
